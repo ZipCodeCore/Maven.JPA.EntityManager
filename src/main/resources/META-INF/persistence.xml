@@ -1,0 +1,11 @@
+<persistence>
+    <persistence-unit
+            name="my-persistence-unit">
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:sql://battletower.csr8tbdx5wbd.us-east-1.rds.amazonaws.com:3306/movies" />
+            <property name="javax.persistence.jdbc.user" value="moviebot" />
+            <property name="javax.persistence.jdbc.password" value="imdb" />
+        </properties>
+    </persistence-unit>
+</persistence>
