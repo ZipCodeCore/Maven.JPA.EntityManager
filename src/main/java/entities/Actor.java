@@ -1,27 +1,28 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 public class Actor
 {
-    Long id;
-    String firstName;
-    String lastName;
-    String gender;
-    LocalDate birthDate;
-    String nationality;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String gender;
+    private LocalDate birthDate;
+    private String nationality;
+    @ManyToMany(fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
+    private Set<Movie> filmography;
 
     public Actor()
     {
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
         return id;
     }
@@ -68,5 +69,13 @@ public class Actor
 
     public void setNationality(String nationality) {
         this.nationality = nationality;
+    }
+
+    public Set<Movie> getFilmography() {
+        return filmography;
+    }
+
+    public void setFilmography(Set<Movie> filmography) {
+        this.filmography = filmography;
     }
 }

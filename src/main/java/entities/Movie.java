@@ -1,21 +1,21 @@
 package entities;
 
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
-@Table(name = "movie")
 public class Movie
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
     String title;
     LocalDate releaseDate;
     String director;
-    @ManyToMany
-//    @JoinTable(name = "CAST",
-//            joinColumns=@JoinColumn(name="movie_id"),
-//            inverseJoinColumns=@JoinColumn(name="actor_id"))
+    @ManyToMany(fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
     Set<Actor> cast;
     String summary;
 
@@ -23,8 +23,6 @@ public class Movie
     {
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId()
     {
         return this.id;
