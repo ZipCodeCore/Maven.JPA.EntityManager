@@ -13,7 +13,7 @@
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+
             <!-- DON'T USE THIS IN PRODUCTION -->
             <!-- automatically drop and create required database tables -->
             <property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>

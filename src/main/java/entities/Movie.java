@@ -13,9 +13,9 @@ public class Movie
     LocalDate releaseDate;
     String director;
     @ManyToMany
-    @JoinTable(name = "CAST",
-            joinColumns=@JoinColumn(name="movie_id"),
-            inverseJoinColumns=@JoinColumn(name="actor_id"))
+//    @JoinTable(name = "CAST",
+//            joinColumns=@JoinColumn(name="movie_id"),
+//            inverseJoinColumns=@JoinColumn(name="actor_id"))
     Set<Actor> cast;
     String summary;
 

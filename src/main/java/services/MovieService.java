@@ -16,7 +16,7 @@ public class MovieService
 
     public MovieService()
     {
-        emf = Persistence.createEntityManagerFactory("movieDatabase");
+        emf = Persistence.createEntityManagerFactory("movieDB");
         em = emf.createEntityManager();
         movieList = new ArrayList<>();
     }
@@ -41,11 +41,13 @@ public class MovieService
     public void update(Long id, Movie movie)
     {
         em.getTransaction().begin();
-        Movie oldMovie = em.find(Movie.class, id);
-        oldMovie = movie;
+        Movie persistentMovie = em.find(Movie.class, id);
+        persistentMovie.setTitle(movie.getTitle());
+        persistentMovie.setReleaseDate(movie.getReleaseDate());
+        persistentMovie.setDirector(movie.getDirector());
+        persistentMovie.setCast(movie.getCast());
+        persistentMovie.setSummary(movie.getSummary());
         em.getTransaction().commit();
-
-        em.merge(movie);
     }
 
     public void delete(Long id)
