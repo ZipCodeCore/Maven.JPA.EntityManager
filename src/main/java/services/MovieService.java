@@ -43,10 +43,9 @@ public class MovieService
         return movie;
     }
 
-    public Movie create(Long id, String title, LocalDate releaseDate, String director, Set<Actor> cast, String summary)
+    public Movie create(String title, LocalDate releaseDate, String director, Set<Actor> cast, String summary)
     {
         Movie createdMovie = new Movie();
-        createdMovie.setId(id);
         createdMovie.setTitle(title);
         createdMovie.setReleaseDate(releaseDate);
         createdMovie.setDirector(director);

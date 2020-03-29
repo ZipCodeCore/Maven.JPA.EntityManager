@@ -48,6 +48,13 @@ public class MovieServiceTest
     }
 
     @Test
+    public void addMovieOtherWayTest()
+    {
+        testMovieService.create("Captain America: The Winter Soldier", LocalDate.of(2014, 4, 10),
+                "Joe Russo", new HashSet<Actor>(), "Captain America must face off against Hydra in the modern era.");
+    }
+
+    @Test
     public void findAllMovies()
     {
         String expectedTitle = "Short Circuit";
@@ -72,6 +79,24 @@ public class MovieServiceTest
 
         assertEquals(expected, actual);
         assertEquals(expectedTitle, actualTitle);
+    }
+
+    @Test
+    public void updateMovieTest()
+    {
+        Movie testMovie = new Movie();
+        String originalTitle = "Toy Story II";
+        testMovie.setTitle(originalTitle);
+        testMovieService.create(testMovie);
+        String actualOriginalTitle = testMovieService.findById(1L).getTitle();
+        assertEquals(originalTitle, actualOriginalTitle);
+
+        String changedTitle = "Toy Story 2";
+        testMovie.setTitle(changedTitle);
+        testMovieService.update(1L, testMovie);
+        String actualChangedTitle = testMovieService.findById(1L).getTitle();
+
+        assertEquals(changedTitle, actualChangedTitle);
     }
 
     @Test
