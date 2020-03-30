@@ -67,6 +67,7 @@ public class MovieService
         persistentMovie.setDirector(movie.getDirector());
         persistentMovie.setCast(movie.getCast());
         persistentMovie.setSummary(movie.getSummary());
+        em.merge(persistentMovie);
         em.getTransaction().commit();
     }
 

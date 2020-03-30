@@ -9,13 +9,17 @@ import java.util.Set;
 public class Movie
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String title;
     LocalDate releaseDate;
     String director;
-    @ManyToMany(fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinTable(
+        name = "cast",
+        joinColumns = {@JoinColumn(name = "movie_id")},
+        inverseJoinColumns = {@JoinColumn(name = "actor_id")}
+    )
     Set<Actor> cast;
     String summary;
 

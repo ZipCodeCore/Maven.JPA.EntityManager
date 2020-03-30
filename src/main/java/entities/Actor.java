@@ -8,15 +8,14 @@ import java.util.Set;
 public class Actor
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
     private String gender;
     private LocalDate birthDate;
     private String nationality;
-    @ManyToMany(fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "cast", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private Set<Movie> filmography;
 
     public Actor()
