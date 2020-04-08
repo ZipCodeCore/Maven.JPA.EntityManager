@@ -1,21 +1,37 @@
 package entities;
 
+
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
+@Table(
+        name = "actor",
+        uniqueConstraints = {@UniqueConstraint(columnNames = {"birthDate", "firstName", "lastName"})}
+)
 public class Actor
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotNull
     private String firstName;
+    @NotNull
     private String lastName;
     private String gender;
+    @NotNull
     private LocalDate birthDate;
     private String nationality;
-    @ManyToMany(mappedBy = "cast", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @ManyToMany(cascade =
+            {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+            name = "movie_cast",
+            joinColumns = {@JoinColumn(name = "actor_id")},
+            inverseJoinColumns = {@JoinColumn(name = "movie_id")}
+    )
     private Set<Movie> filmography;
 
     public Actor()

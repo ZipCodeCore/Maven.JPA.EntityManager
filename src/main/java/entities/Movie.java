@@ -1,26 +1,36 @@
 package entities;
 
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
+@Table(
+        name = "movie",
+        uniqueConstraints = {@UniqueConstraint(columnNames = {"title", "releaseDate"})}
+)
 public class Movie
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String title;
-    LocalDate releaseDate;
-    String director;
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @NotNull
+    private String title;
+    @NotNull
+    private LocalDate releaseDate;
+    private String director;
+    @ManyToMany(cascade =
+            {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
-        name = "cast",
+        name = "movie_cast",
         joinColumns = {@JoinColumn(name = "movie_id")},
         inverseJoinColumns = {@JoinColumn(name = "actor_id")}
     )
-    Set<Actor> cast;
+    private Set<Actor> cast;
     String summary;
 
     public Movie()
@@ -85,5 +95,11 @@ public class Movie
     public void setSummary(String summary)
     {
         this.summary = summary;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(this.getTitle());
     }
 }

@@ -63,6 +63,9 @@ public class MovieServiceTest
         Movie thirdMovie = new Movie();
         List<Movie> expected = new ArrayList<>();
         firstMovie.setTitle("E.T.");
+        firstMovie.setDirector("Steven Spielberg");
+        firstMovie.setSummary("A boy and alien become pals.");
+        firstMovie.setReleaseDate(LocalDate.of(1982, 5, 11));
         secondMovie.setTitle("Star Wars");
         thirdMovie.setTitle(expectedTitle);
 

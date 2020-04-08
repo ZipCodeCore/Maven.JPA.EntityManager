@@ -5,7 +5,7 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
-          <factory-entry name="movieDB" />
+          <factory-entry name="movieDB" value="0d92cece-31fe-470a-8274-cf88739dd955" />
           <factory-entry name="movieDatabase" />
           <factory-entry name="my-persistence-unit" />
         </datasource-mapping>
