@@ -9,10 +9,10 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(
-        name = "movie",
-        uniqueConstraints = {@UniqueConstraint(columnNames = {"title", "releaseDate"})}
-)
+//@Table(
+//        name = "movie",
+//        uniqueConstraints = {@UniqueConstraint(columnNames = {"title", "releaseDate"})}
+//)
 public class Movie
 {
     @Id

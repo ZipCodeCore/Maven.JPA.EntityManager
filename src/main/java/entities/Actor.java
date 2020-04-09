@@ -8,10 +8,10 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
-@Table(
-        name = "actor",
-        uniqueConstraints = {@UniqueConstraint(columnNames = {"birthDate", "firstName", "lastName"})}
-)
+//@Table(
+//        name = "actor",
+//        uniqueConstraints = {@UniqueConstraint(columnNames = {"birthDate", "firstName", "lastName"})}
+//)
 public class Actor
 {
     @Id

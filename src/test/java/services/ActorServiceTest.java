@@ -7,16 +7,19 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class ActorServiceTest
 {
     ActorService testActorService;
+    MovieService testMovieService;
 
     @Before
     public void init()
     {
         testActorService = new ActorService();
+        testMovieService = new MovieService();
     }
 
     @Test
@@ -81,5 +84,19 @@ public class ActorServiceTest
 
         testActorService.create(testTomHanks);
         testActorService.create(testMegRyan);
+
+        List<Movie> movies = testMovieService.findAll();
+
+        for(Movie movie : movies)
+        {
+            System.out.println(movie.getTitle());
+            System.out.println("=======");
+            Set<Actor> cast = movie.getCast();
+            for(Actor actor : cast)
+            {
+                System.out.println("Actor: " + actor.getFirstName() + " " + actor.getLastName());
+            }
+            System.out.println("\n");
+        }
     }
 }
