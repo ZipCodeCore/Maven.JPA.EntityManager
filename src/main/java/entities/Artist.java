@@ -5,17 +5,15 @@ import com.sun.javafx.beans.IDProperty;
 public class Artist {
 
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String birthPlace;
     private Integer birthYear;
 
     public Artist() {}
 
-    public Artist(Long id, String firstName, String lastName, String birthPlace, Integer birthYear) {
+    public Artist(Long id, String name, String birthPlace, Integer birthYear) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
         this.birthPlace = birthPlace;
         this.birthYear = birthYear;
     }
@@ -28,20 +26,12 @@ public class Artist {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getBirthPlace() {

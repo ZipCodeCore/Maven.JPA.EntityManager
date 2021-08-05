@@ -11,7 +11,7 @@ public class ArtistTest {
     public void testGetId() {
         //given
         Long expected = 1L;
-        Artist artist = new Artist(expected, "Edward", "Hopper", "New York", 1882);
+        Artist artist = new Artist(expected, "Edward Hopper", "New York", 1882);
         //when
         Long actual = artist.getId();
         //then
@@ -34,9 +34,9 @@ public class ArtistTest {
     public void testGetFirstName() {
         //given
         String expected = "Edward";
-        Artist artist = new Artist(1L, expected, "Hopper", "New York", 1882);
+        Artist artist = new Artist(1L, "Edward Hopper", "New York", 1882);
         //when
-        String actual = artist.getFirstName();
+        String actual = artist.getName();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -47,31 +47,8 @@ public class ArtistTest {
         String expected = "Edward";
         Artist artist = new Artist();
         //when
-        artist.setFirstName(expected);
-        String actual = artist.getFirstName();
-        //then
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testGetLastName() {
-        //given
-        String expected = "Hopper";
-        Artist artist = new Artist(1L, "Edward", "Hopper", "New York", 1882);
-        //when
-        String actual = artist.getLastName();
-        //then
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testSetLastName() {
-        //given
-        String expected = "Hopper";
-        Artist artist = new Artist();
-        //when
-        artist.setLastName(expected);
-        String actual = artist.getLastName();
+        artist.setName(expected);
+        String actual = artist.getName();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -80,7 +57,7 @@ public class ArtistTest {
     public void testGetBirthPlace() {
         //given
         String expected = "New York";
-        Artist artist = new Artist(1L, "Edward", "Hopper", "New York", 1882);
+        Artist artist = new Artist(1L, "Edward Hopper", "New York", 1882);
         //when
         String actual = artist.getBirthPlace();
         //then
@@ -103,7 +80,7 @@ public class ArtistTest {
     public void testGetBirthYear() {
         //given
         Integer expected = 1882;
-        Artist artist = new Artist(1L, "Edward", "Hopper", "New York", 1882);
+        Artist artist = new Artist(1L, "Edward Hopper", "New York", 1882);
         //when
         Integer actual = artist.getBirthYear();
         //then
