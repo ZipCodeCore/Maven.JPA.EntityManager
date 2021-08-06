@@ -49,4 +49,14 @@ public class Artist {
     public void setBirthYear(Integer birthYear) {
         this.birthYear = birthYear;
     }
+
+    @Override
+    public String toString() {
+        return "Artist {" +
+                "ID = " + id +
+                ", Name = " + name +
+                ", Birth Place = " + birthPlace +
+                ", Birth Year = " + birthYear +
+                "}";
+    }
 }

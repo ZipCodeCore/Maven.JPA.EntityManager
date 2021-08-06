@@ -1,7 +1,9 @@
 package main;
 
 import entities.Artist;
+import entities.Painting;
 import services.ArtistRepository;
+import services.PaintingRepository;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -15,6 +17,7 @@ public class MainApplication {
         SQLConnect.registerJDBCDriver();
         Connection mysqlDbConnection = SQLConnect.getConnection("mysql");
         ArtistRepository artistRepository = new ArtistRepository(mysqlDbConnection);
+        PaintingRepository paintingRepository = new PaintingRepository(mysqlDbConnection);
         executeStatement(mysqlDbConnection, "DROP DATABASE IF EXISTS artdb;");
         executeStatement(mysqlDbConnection, "CREATE DATABASE IF NOT EXISTS artdb;");
         executeStatement(mysqlDbConnection, "USE artdb;");
@@ -23,19 +26,20 @@ public class MainApplication {
                 .append("id int auto_increment primary key,")
                 .append("name text not null,")
                 .append("birthplace text not null,")
-                .append("birth_year int;")
+                .append("birth_year int);")
                 .toString());
         executeStatement(mysqlDbConnection, new StringBuilder()
                 .append("CREATE TABLE IF NOT EXISTS artdb.paintings(")
                 .append("id int auto_increment primary key,")
                 .append("title text not null,")
                 .append("medium text not null,")
-                .append("artist text not null;")
+                .append("artist text not null);")
                 .toString());
 
         artistRepository.create(new Artist(1L, "Edward Hopper", "New York", 1882));
-        pokemonRepository.create(new Painting(1L, "Nighthawks", "oil", "Edward Hopper"));
+        paintingRepository.create(new Painting(1L, "Nighthawks", "oil", "Edward Hopper"));
         System.out.println(artistRepository.findAll());
+        System.out.println(paintingRepository.findAll());
 
     }
 

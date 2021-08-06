@@ -20,7 +20,7 @@ public class ArtistRepository implements Repository{
 
     public void create(Artist artist) {
         executeStatement(String.format(new StringBuilder()
-                        .append("INSERT INTO potions.potionsTable(")
+                        .append("INSERT INTO artdb.artists(")
                         .append("id, name, birthplace, birth_year)")
                         .append("VALUES (%s, '%s', '%s', %s);")
                         .toString(),
