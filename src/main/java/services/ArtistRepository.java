@@ -21,7 +21,7 @@ public class ArtistRepository implements Repository{
     public void create(Artist artist) {
         executeStatement(String.format(new StringBuilder()
                         .append("INSERT INTO artdb.artists(")
-                        .append("id, name, birthplace, birth_year)")
+                        .append("id, name, birth_place, birth_year)")
                         .append("VALUES (%s, '%s', '%s', %s);")
                         .toString(),
                 artist.getId(),
@@ -61,8 +61,8 @@ public class ArtistRepository implements Repository{
 
     public void update(Long id, Artist newArtistData) {
         executeStatement(String.format(new StringBuilder()
-                        .append("UPDATE potions.potionsTable ")
-                        .append("SET name = '%s', birthplace = '%s', birth_year = %s WHERE id = %s;")
+                        .append("UPDATE artdb.artists ")
+                        .append("SET name = '%s', birth_place = '%s', birth_year = %s WHERE id = %s;")
                         .toString(),
                 newArtistData.getName(),
                 newArtistData.getBirthPlace(),

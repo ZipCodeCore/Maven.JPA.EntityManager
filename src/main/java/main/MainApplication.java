@@ -25,7 +25,7 @@ public class MainApplication {
                 .append("CREATE TABLE IF NOT EXISTS artdb.artists(")
                 .append("id int auto_increment primary key,")
                 .append("name text not null,")
-                .append("birthplace text not null,")
+                .append("birth_place text not null,")
                 .append("birth_year int);")
                 .toString());
         executeStatement(mysqlDbConnection, new StringBuilder()
@@ -37,7 +37,9 @@ public class MainApplication {
                 .toString());
 
         artistRepository.create(new Artist(1L, "Edward Hopper", "New York", 1882));
+        artistRepository.create(new Artist(2L, "Vincent van Gogh", "Netherlands", 1853));
         paintingRepository.create(new Painting(1L, "Nighthawks", "oil", "Edward Hopper"));
+        paintingRepository.create(new Painting(2L, "Almond Blossom", "oil", "Vincent van Gogh"));
         System.out.println(artistRepository.findAll());
         System.out.println(paintingRepository.findAll());
 
