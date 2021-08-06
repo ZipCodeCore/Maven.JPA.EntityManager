@@ -62,7 +62,7 @@ public class PaintingRepository implements Repository{
 
     public void update(Long id, Painting newPaintingData) {
         executeStatement(String.format(new StringBuilder()
-                        .append("UPDATE potions.potionsTable ")
+                        .append("UPDATE artdb.paintings ")
                         .append("SET title = '%s', medium = '%s', artist = '%s' WHERE id = %s;")
                         .toString(),
                 newPaintingData.getTitle(),
@@ -74,7 +74,7 @@ public class PaintingRepository implements Repository{
     public void delete(Long id) {
         Painting painting = findById(id);
         executeStatement(String.format(new StringBuilder()
-                        .append("DELETE FROM artdb.artists WHERE id = %s")
+                        .append("DELETE FROM artdb.paintings WHERE id = %s")
                         .toString(),
                 id));
         System.out.printf("%s has been deleted", painting.toString());
