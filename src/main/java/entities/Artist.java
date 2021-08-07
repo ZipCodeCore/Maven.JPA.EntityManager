@@ -2,8 +2,13 @@ package entities;
 
 import com.sun.javafx.beans.IDProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Artist {
 
+    @Id
     private Long id;
     private String name;
     private String birthPlace;

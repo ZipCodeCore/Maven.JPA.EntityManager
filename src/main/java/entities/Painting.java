@@ -1,7 +1,12 @@
 package entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Painting {
 
+    @Id
     private Long id;
     private String title;
     private String medium;
