@@ -23,7 +23,7 @@ public class PaintingService implements Service {
     }
 
     public List<Painting> findAll() {
-        return entityManager.createQuery("SELECT * FROM Painting;", Painting.class).getResultList();
+        return entityManager.createQuery("SELECT p FROM Painting p", Painting.class).getResultList();
 
     }
 
