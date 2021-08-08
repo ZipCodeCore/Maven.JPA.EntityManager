@@ -3,8 +3,6 @@ package entities;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class PaintingTest {
 
     @Test
@@ -82,7 +80,7 @@ public class PaintingTest {
         String expected = "Edward Hopper";
         Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper");
         //when
-        String actual = painting.getArtist();
+        String actual = painting.getArtistName();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -93,8 +91,8 @@ public class PaintingTest {
         String expected = "Edward Hopper";
         Painting painting = new Painting();
         //when
-        painting.setArtist(expected);
-        String actual = painting.getArtist();
+        painting.setArtistName(expected);
+        String actual = painting.getArtistName();
         //then
         Assert.assertEquals(expected, actual);
     }

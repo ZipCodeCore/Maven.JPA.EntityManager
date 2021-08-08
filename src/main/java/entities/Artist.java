@@ -1,11 +1,11 @@
 package entities;
 
-import com.sun.javafx.beans.IDProperty;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
+@Table(name = "Artist")
 public class Artist {
 
     @Id
@@ -13,6 +13,10 @@ public class Artist {
     private String name;
     private String birthPlace;
     private Integer birthYear;
+
+    @OneToMany(mappedBy = "Artist", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, orphanRemoval = true)
+    private Set<Painting> painting = new HashSet<>();
 
     public Artist() {}
 

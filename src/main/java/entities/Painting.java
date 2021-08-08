@@ -1,23 +1,28 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "Painting")
 public class Painting {
 
     @Id
     private Long id;
     private String title;
     private String medium;
-    private String artist;
+    private String artistName;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "artist", nullable = false)
+    private Artist artist;
 
     public Painting(){}
 
-    public Painting(Long id, String title, String medium, String artist){
+    public Painting(Long id, String title, String medium, String artistName){
         this.id = id;
         this.title = title;
         this.medium = medium;
+        this.artistName = artistName;
         this.artist = artist;
     }
 
@@ -45,11 +50,19 @@ public class Painting {
         this.medium = medium;
     }
 
-    public String getArtist() {
+    public String getArtistName() {
+        return artistName;
+    }
+
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
+    }
+
+    public Artist getArtist() {
         return artist;
     }
 
-    public void setArtist(String artist) {
+    public void setArtist(Artist artist) {
         this.artist = artist;
     }
 
@@ -59,7 +72,7 @@ public class Painting {
                 "ID = " + id +
                 ", Title = " + title +
                 ", Medium = " + medium +
-                ", Artist = " + artist +
+                ", Artist = " + artistName +
                 "}";
     }
 }

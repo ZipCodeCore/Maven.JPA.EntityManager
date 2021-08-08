@@ -40,7 +40,7 @@ public class PaintingService implements Service {
         painting.setId(newPaintingData.getId());
         painting.setTitle(newPaintingData.getTitle());
         painting.setMedium(newPaintingData.getMedium());
-        painting.setArtist(newPaintingData.getArtist());
+        painting.setArtistName(newPaintingData.getArtistName());
 
         entityManager.getTransaction().commit();
 
