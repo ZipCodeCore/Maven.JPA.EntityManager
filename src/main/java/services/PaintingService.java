@@ -1,6 +1,5 @@
 package services;
 
-import entities.Artist;
 import entities.Painting;
 import java.util.List;
 

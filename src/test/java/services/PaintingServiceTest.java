@@ -4,8 +4,6 @@ import entities.Artist;
 import entities.Painting;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
