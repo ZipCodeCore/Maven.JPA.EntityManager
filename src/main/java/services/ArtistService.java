@@ -10,9 +10,6 @@ import java.util.List;
 
 public class ArtistService implements Service {
 
-    public List<Artist> list;
-
-
 
     public void create(Artist artist) {
         entityManager.getTransaction().begin();

@@ -12,12 +12,14 @@ import java.util.List;
 public class PaintingServiceTest {
 
     PaintingService paintingService = new PaintingService();
+    Artist vanGogh = new Artist(1L, "Vincent van Gogh", "Netherlands", 1853);
+    Artist hopper = new Artist(2L, "Edward Hopper", "New York", 1882);
 
 
     @Test
     public void testCreate() {
         //given
-        Painting painting = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh");
+        Painting painting = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh", vanGogh);
         String expected = painting.toString();
         //when
         paintingService.create(painting);
@@ -31,8 +33,8 @@ public class PaintingServiceTest {
     @Test
     public void testFindAll() {
         //given
-        Painting almondBlossom = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh");
-        Painting nightHawks = new Painting(2L, "NightHawks", "oil", "Edward Hopper");
+        Painting almondBlossom = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh", vanGogh);
+        Painting nightHawks = new Painting(2L, "NightHawks", "oil", "Edward Hopper", hopper);
         List<Painting> list = new ArrayList<>();
         list.add(almondBlossom);
         list.add(nightHawks);
@@ -49,7 +51,9 @@ public class PaintingServiceTest {
     @Test
     public void testFindById() {
         //given
-        Painting painting = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh");
+        Painting painting = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh", vanGogh);
+        List<Painting> list = new ArrayList<>();
+        list.add(painting);
         String expected = painting.toString();
         //when
         paintingService.create(painting);
@@ -63,8 +67,8 @@ public class PaintingServiceTest {
     @Test
     public void testUpdate() {
         //given
-        Painting almondBlossom = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh");
-        Painting nightHawks = new Painting(1L, "NightHawks", "oil", "Edward Hopper");
+        Painting almondBlossom = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh", vanGogh);
+        Painting nightHawks = new Painting(1L, "NightHawks", "oil", "Edward Hopper", hopper);
         String expected = nightHawks.toString();
         //when
         paintingService.create(almondBlossom);
@@ -79,8 +83,8 @@ public class PaintingServiceTest {
     @Test
     public void testDeleteByID() {
         //given
-        Painting almondBlossom = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh");
-        Painting nightHawks = new Painting(2L, "NightHawks", "oil", "Edward Hopper");
+        Painting almondBlossom = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh", vanGogh);
+        Painting nightHawks = new Painting(2L, "NightHawks", "oil", "Edward Hopper", hopper);
         List<Painting> list = new ArrayList<>();
         list.add(almondBlossom);
         list.add(nightHawks);
@@ -97,8 +101,8 @@ public class PaintingServiceTest {
     @Test
     public void testDeleteByObject() {
         //given
-        Painting almondBlossom = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh");
-        Painting nightHawks = new Painting(2L, "NightHawks", "oil", "Edward Hopper");
+        Painting almondBlossom = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh", vanGogh);
+        Painting nightHawks = new Painting(2L, "NightHawks", "oil", "Edward Hopper", hopper);
         List<Painting> list = new ArrayList<>();
         list.add(almondBlossom);
         list.add(nightHawks);

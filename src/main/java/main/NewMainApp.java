@@ -21,15 +21,15 @@ public class NewMainApp {
         artistList.add(vanGogh);
         artistList.add(hopper);
 
-        Painting almondBlossom = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh");
-        Painting nightHawks = new Painting(2L, "NightHawks", "oil", "Edward Hopper");
-        paintingList.add(almondBlossom);
-        paintingList.add(nightHawks);
+//        Painting almondBlossom = new Painting(1L, "Almond Blossom", "oil", "Vincent van Gogh", vanGogh);
+//        Painting nightHawks = new Painting(2L, "NightHawks", "oil", "Edward Hopper", hopper);
+//        paintingList.add(almondBlossom);
+//        paintingList.add(nightHawks);
 
 
         //CREATE
         artistService.createMultiple(artistList);
-        paintingService.createMultiple(paintingList);
+//        paintingService.createMultiple(paintingList);
 
 
         //READ
@@ -38,10 +38,10 @@ public class NewMainApp {
         System.out.println(artist1.toString());
         System.out.println(artist2.toString());
 
-        Painting painting1 = paintingService.findById(1L);
-        Painting painting2 = paintingService.findById(2L);
-        System.out.println(painting1.toString());
-        System.out.println(painting2.toString());
+//        Painting painting1 = paintingService.findById(1L);
+//        Painting painting2 = paintingService.findById(2L);
+//        System.out.println(painting1.toString());
+//        System.out.println(painting2.toString());
 
     }
 }

@@ -14,7 +14,7 @@ public class Artist {
     private String birthPlace;
     private Integer birthYear;
 
-    @OneToMany(mappedBy = "Artist", cascade = CascadeType.ALL,
+    @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL,
             fetch = FetchType.LAZY, orphanRemoval = true)
     private Set<Painting> painting = new HashSet<>();
 

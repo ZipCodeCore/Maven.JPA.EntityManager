@@ -31,9 +31,9 @@ public class ArtistTest {
     }
 
     @Test
-    public void testGetFirstName() {
+    public void testGetName() {
         //given
-        String expected = "Edward";
+        String expected = "Edward Hopper";
         Artist artist = new Artist(1L, "Edward Hopper", "New York", 1882);
         //when
         String actual = artist.getName();
@@ -42,9 +42,9 @@ public class ArtistTest {
     }
 
     @Test
-    public void testSetFirstName() {
+    public void testSetName() {
         //given
-        String expected = "Edward";
+        String expected = "Edward Hopper";
         Artist artist = new Artist();
         //when
         artist.setName(expected);

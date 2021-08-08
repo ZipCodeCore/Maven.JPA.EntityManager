@@ -13,12 +13,12 @@ public class Painting {
     private String artistName;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "artist", nullable = false)
+    @JoinColumn(name = "name", nullable = false)
     private Artist artist;
 
     public Painting(){}
 
-    public Painting(Long id, String title, String medium, String artistName){
+    public Painting(Long id, String title, String medium, String artistName, Artist artist){
         this.id = id;
         this.title = title;
         this.medium = medium;
@@ -58,13 +58,9 @@ public class Painting {
         this.artistName = artistName;
     }
 
-    public Artist getArtist() {
-        return artist;
-    }
+    public Artist getArtist() { return artist; }
 
-    public void setArtist(Artist artist) {
-        this.artist = artist;
-    }
+    public void setArtist(Artist artist) { this.artist = artist; }
 
     @Override
     public String toString() {

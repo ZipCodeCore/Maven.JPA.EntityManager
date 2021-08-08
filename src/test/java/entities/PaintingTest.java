@@ -5,11 +5,13 @@ import org.junit.Test;
 
 public class PaintingTest {
 
+    Artist artist = new Artist(1L, "Edward Hopper", "New York", 1882);
+
     @Test
     public void testGetId() {
         //given
         Long expected = 1L;
-        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper");
+        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper", artist);
         //when
         Long actual = painting.getId();
         //then
@@ -32,7 +34,7 @@ public class PaintingTest {
     public void testGetTitle() {
         //given
         String expected = "Nighthawks";
-        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper");
+        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper", artist);
         //when
         String actual = painting.getTitle();
         //then
@@ -55,7 +57,7 @@ public class PaintingTest {
     public void testGetMedium() {
         //given
         String expected = "oil";
-        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper");
+        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper", artist);
         //when
         String actual = painting.getMedium();
         //then
@@ -75,10 +77,10 @@ public class PaintingTest {
     }
 
     @Test
-    public void testGetArtist() {
+    public void testGetArtistName() {
         //given
         String expected = "Edward Hopper";
-        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper");
+        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper", artist);
         //when
         String actual = painting.getArtistName();
         //then
@@ -86,13 +88,36 @@ public class PaintingTest {
     }
 
     @Test
-    public void testSetArtist() {
+    public void testSetArtistName() {
         //given
         String expected = "Edward Hopper";
         Painting painting = new Painting();
         //when
         painting.setArtistName(expected);
         String actual = painting.getArtistName();
+        //then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetArtist() {
+        //given
+        Artist expected = artist;
+        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper", artist);
+        //when
+        Artist actual = painting.getArtist();
+        //then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSetArtist() {
+        //given
+        Artist expected = new Artist(1L, "Edward Hopper", "New York", 1882);
+        Painting painting = new Painting();
+        //when
+        painting.setArtist(expected);
+        Artist actual = painting.getArtist();
         //then
         Assert.assertEquals(expected, actual);
     }
