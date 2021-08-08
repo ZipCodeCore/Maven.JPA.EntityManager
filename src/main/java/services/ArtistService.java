@@ -3,7 +3,7 @@ package services;
 import entities.Artist;
 import java.util.List;
 
-public class ArtistRepository implements Repository{
+public class ArtistService implements Service {
 
     public List<Artist> list;
 
@@ -23,7 +23,7 @@ public class ArtistRepository implements Repository{
     }
 
     public List<Artist> findAll() {
-        return entityManager.createQuery("SELECT * FROM Artist;", Artist.class).getResultList();
+        return entityManager.createQuery("SELECT a FROM Artist a", Artist.class).getResultList();
     }
 
     public Artist findById(Long id) {

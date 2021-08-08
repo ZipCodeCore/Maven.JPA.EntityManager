@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public interface Repository {
+public interface Service {
 
     EntityManagerFactory managerFactory = Persistence.createEntityManagerFactory("myunit");
     EntityManager entityManager = managerFactory.createEntityManager();

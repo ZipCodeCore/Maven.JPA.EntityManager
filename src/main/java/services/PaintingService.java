@@ -3,7 +3,7 @@ package services;
 import entities.Painting;
 import java.util.List;
 
-public class PaintingRepository implements Repository{
+public class PaintingService implements Service {
 
     public List<Painting> list;
 
