@@ -58,7 +58,7 @@ public class ArtistTest {
         String expected = "New York";
         Artist artist = new Artist(1L, "Edward Hopper", "New York", 1882);
         //when
-        String actual = artist.getBirthPlace();
+        String actual = artist.getInstrument();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -69,8 +69,8 @@ public class ArtistTest {
         String expected = "New York";
         Artist artist = new Artist();
         //when
-        artist.setBirthPlace(expected);
-        String actual = artist.getBirthPlace();
+        artist.setInstrument(expected);
+        String actual = artist.getInstrument();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -81,7 +81,7 @@ public class ArtistTest {
         Integer expected = 1882;
         Artist artist = new Artist(1L, "Edward Hopper", "New York", 1882);
         //when
-        Integer actual = artist.getBirthYear();
+        Integer actual = artist.getAge();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -92,8 +92,8 @@ public class ArtistTest {
         Integer expected = 1882;
         Artist artist = new Artist();
         //when
-        artist.setBirthYear(expected);
-        Integer actual = artist.getBirthYear();
+        artist.setAge(expected);
+        Integer actual = artist.getAge();
         //then
         Assert.assertEquals(expected, actual);
     }

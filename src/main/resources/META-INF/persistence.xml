@@ -7,9 +7,9 @@
     <persistence-unit name="myunit">
             <properties>
                 <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-                <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/artdb"/>
-                <property name="javax.persistence.jdbc.user" value="jen"/>
-                <property name="javax.persistence.jdbc.password" value="zipcode0"/>
+                <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/artistdb"/>
+                <property name="javax.persistence.jdbc.user" value="carl"/>
+                <property name="javax.persistence.jdbc.password" value="carlpass"/>
                 <property name="hibernate.format_sql" value="true"/>
                 <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
                 <property name="hibernate.hbm2ddl.auto" value="update"/>

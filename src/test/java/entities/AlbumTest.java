@@ -3,7 +3,7 @@ package entities;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class PaintingTest {
+public class AlbumTest {
 
     Artist artist = new Artist(1L, "Edward Hopper", "New York", 1882);
 
@@ -11,9 +11,9 @@ public class PaintingTest {
     public void testGetId() {
         //given
         Long expected = 1L;
-        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper", artist);
+        Album album = new Album(1L, "Nighthawks", "oil", "Edward Hopper", artist);
         //when
-        Long actual = painting.getId();
+        Long actual = album.getId();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -22,10 +22,10 @@ public class PaintingTest {
     public void testSetId() {
         //given
         Long expected = 1L;
-        Painting painting = new Painting();
+        Album album = new Album();
         //when
-        painting.setId(expected);
-        Long actual = painting.getId();
+        album.setId(expected);
+        Long actual = album.getId();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -34,9 +34,9 @@ public class PaintingTest {
     public void testGetTitle() {
         //given
         String expected = "Nighthawks";
-        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper", artist);
+        Album album = new Album(1L, "Nighthawks", "oil", "Edward Hopper", artist);
         //when
-        String actual = painting.getTitle();
+        String actual = album.getTitle();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -45,10 +45,10 @@ public class PaintingTest {
     public void testSetTitle() {
         //given
         String expected = "Nighthawks";
-        Painting painting = new Painting();
+        Album album = new Album();
         //when
-        painting.setTitle(expected);
-        String actual = painting.getTitle();
+        album.setTitle(expected);
+        String actual = album.getTitle();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -57,9 +57,9 @@ public class PaintingTest {
     public void testGetMedium() {
         //given
         String expected = "oil";
-        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper", artist);
+        Album album = new Album(1L, "Nighthawks", "oil", "Edward Hopper", artist);
         //when
-        String actual = painting.getMedium();
+        String actual = album.getGenre();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -68,10 +68,10 @@ public class PaintingTest {
     public void testSetMedium() {
         //given
         String expected = "oil";
-        Painting painting = new Painting();
+        Album album = new Album();
         //when
-        painting.setMedium(expected);
-        String actual = painting.getMedium();
+        album.setGenre(expected);
+        String actual = album.getGenre();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -80,9 +80,9 @@ public class PaintingTest {
     public void testGetArtistName() {
         //given
         String expected = "Edward Hopper";
-        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper", artist);
+        Album album = new Album(1L, "Nighthawks", "oil", "Edward Hopper", artist);
         //when
-        String actual = painting.getArtistName();
+        String actual = album.getArtistName();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -91,10 +91,10 @@ public class PaintingTest {
     public void testSetArtistName() {
         //given
         String expected = "Edward Hopper";
-        Painting painting = new Painting();
+        Album album = new Album();
         //when
-        painting.setArtistName(expected);
-        String actual = painting.getArtistName();
+        album.setArtistName(expected);
+        String actual = album.getArtistName();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -103,9 +103,9 @@ public class PaintingTest {
     public void testGetArtist() {
         //given
         Artist expected = artist;
-        Painting painting = new Painting(1L, "Nighthawks", "oil", "Edward Hopper", artist);
+        Album album = new Album(1L, "Nighthawks", "oil", "Edward Hopper", artist);
         //when
-        Artist actual = painting.getArtist();
+        Artist actual = album.getArtist();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -114,10 +114,10 @@ public class PaintingTest {
     public void testSetArtist() {
         //given
         Artist expected = new Artist(1L, "Edward Hopper", "New York", 1882);
-        Painting painting = new Painting();
+        Album album = new Album();
         //when
-        painting.setArtist(expected);
-        Artist actual = painting.getArtist();
+        album.setArtist(expected);
+        Artist actual = album.getArtist();
         //then
         Assert.assertEquals(expected, actual);
     }

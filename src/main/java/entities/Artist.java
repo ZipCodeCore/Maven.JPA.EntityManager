@@ -11,20 +11,20 @@ public class Artist {
     @Id
     private Long id;
     private String name;
-    private String birthPlace;
-    private Integer birthYear;
+    private String instrument;
+    private Integer age;
 
     @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL,
             fetch = FetchType.LAZY, orphanRemoval = true)
-    private Set<Painting> painting = new HashSet<>();
+    private Set<Album> album = new HashSet<>();
 
     public Artist() {}
 
-    public Artist(Long id, String name, String birthPlace, Integer birthYear) {
+    public Artist(Long id, String name, String instrument, Integer age) {
         this.id = id;
         this.name = name;
-        this.birthPlace = birthPlace;
-        this.birthYear = birthYear;
+        this.instrument = instrument;
+        this.age = age;
     }
 
     public Long getId() {
@@ -43,20 +43,20 @@ public class Artist {
         this.name = name;
     }
 
-    public String getBirthPlace() {
-        return birthPlace;
+    public String getInstrument() {
+        return instrument;
     }
 
-    public void setBirthPlace(String birthPlace) {
-        this.birthPlace = birthPlace;
+    public void setInstrument(String instrument) {
+        this.instrument = instrument;
     }
 
-    public Integer getBirthYear() {
-        return birthYear;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setBirthYear(Integer birthYear) {
-        this.birthYear = birthYear;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     @Override
@@ -64,8 +64,8 @@ public class Artist {
         return "Artist {" +
                 "ID = " + id +
                 ", Name = " + name +
-                ", Birth Place = " + birthPlace +
-                ", Birth Year = " + birthYear +
+                ", Birth Place = " + instrument +
+                ", Birth Year = " + age +
                 "}";
     }
 }

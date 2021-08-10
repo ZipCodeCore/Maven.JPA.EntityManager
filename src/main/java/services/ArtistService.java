@@ -34,8 +34,8 @@ public class ArtistService implements Service {
 
         artist.setId(newArtistData.getId());
         artist.setName(newArtistData.getName());
-        artist.setBirthPlace(newArtistData.getBirthPlace());
-        artist.setBirthYear(newArtistData.getBirthYear());
+        artist.setInstrument(newArtistData.getInstrument());
+        artist.setAge(newArtistData.getAge());
 
         entityManager.getTransaction().commit();
     }

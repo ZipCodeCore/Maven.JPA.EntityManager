@@ -3,25 +3,25 @@ package entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Painting")
-public class Painting {
+@Table(name = "Album")
+public class Album {
 
     @Id
     private Long id;
     private String title;
-    private String medium;
+    private String genre;
     private String artistName;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "name", nullable = false)
     private Artist artist;
 
-    public Painting(){}
+    public Album(){}
 
-    public Painting(Long id, String title, String medium, String artistName, Artist artist){
+    public Album(Long id, String title, String genre, String artistName, Artist artist){
         this.id = id;
         this.title = title;
-        this.medium = medium;
+        this.genre = genre;
         this.artistName = artistName;
         this.artist = artist;
     }
@@ -42,12 +42,12 @@ public class Painting {
         this.title = title;
     }
 
-    public String getMedium() {
-        return medium;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setMedium(String medium) {
-        this.medium = medium;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
     public String getArtistName() {
@@ -67,7 +67,7 @@ public class Painting {
         return "Painting {" +
                 "ID = " + id +
                 ", Title = " + title +
-                ", Medium = " + medium +
+                ", Medium = " + genre +
                 ", Artist = " + artistName +
                 "}";
     }
