@@ -17,7 +17,7 @@ public class TestAlbumServ {
     @Test
     public void testCreate() {
         //given
-        Album album = new Album(1L, "MOTS7", 14, 1853);
+        Album album = new Album(1L, "MOTS7", 14, 25);
         String expected = album.toString();
         //when
         albumService.create(album);

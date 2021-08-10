@@ -1,13 +1,11 @@
 package entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "Album")
 public class Album {
-
-
 
     @Id
     Long id;
@@ -15,8 +13,12 @@ public class Album {
     int numberOfSongs;
     int price;
 
-    public Album(){
+    private Long elId;
+    @ManyToOne
+    @JoinColumn(name = "elId", referencedColumnName = "id", insertable = false, updatable = false)
+    private Artist a;
 
+    public Album(){
     }
 
     public Album(Long id, String name, int numberOfSongs, int price) {

@@ -1,12 +1,11 @@
 package entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Artist")
 public class Artist {
-
-
 
     @Id
     //@GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,9 +14,13 @@ public class Artist {
     String stageName;
     int numOfAwards;
 
-    public Artist(){
+   @OneToMany(mappedBy = "a", fetch = FetchType.EAGER)
+    private List<Album> albums;
 
+
+    public Artist() {
     }
+
     public Artist (Long id, String name, String stageName, int numOfAwards){
         this.id = id;
         this.name = name;

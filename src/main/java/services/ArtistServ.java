@@ -54,14 +54,14 @@ public class ArtistServ {
         entityManager.getTransaction().begin();
         entityManager.remove(artist);
         entityManager.getTransaction().commit();
-        System.out.printf("%s has been deleted", artist.toString());
+       // System.out.printf("%s has been deleted", artist.toString());
     }
 
     public void delete(Artist artist) {
         entityManager.getTransaction().begin();
         entityManager.remove(artist);
         entityManager.getTransaction().commit();
-        System.out.printf("%s has been deleted", artist.toString());
+        //System.out.printf("%s has been deleted", artist.toString());
     }
 }
 

@@ -1,5 +1,6 @@
 package services;
 
+import entities.Album;
 import entities.Artist;
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,7 +11,7 @@ import java.util.List;
 public class TestArtistServ {
 
     ArtistServ artistService = new ArtistServ();
-
+    AlbumServ albumService = new AlbumServ();
 
     @Test
     public void testCreate() {
@@ -38,7 +39,7 @@ public class TestArtistServ {
         //int expected = list.size();
         //when
         artistService.createMultiple(list);
-       //int actual = artistService.findAll().size();
+        //int actual = artistService.findAll().size();
         String actual = list.toString();
         //then
         Assert.assertEquals(expected, actual);
@@ -111,6 +112,33 @@ public class TestArtistServ {
         Assert.assertEquals(expected, actual);
         artistService.delete(1L);
     }
+//
+//    @Test
+//    public void testGetBooks() {
+//        // Arrange
+//        Artist testA = new Artist(null, "TEST", "BOOK TO AUTHOR MAPPING", "none");
+//        Long idArtist = artistService.create(testA);
+//        Album a = new Album(null, "TEST BOOK TO AUTHOR MAPPING1", "J.K. Rowling", "Penguin", "Fantasy", 300, idArtist);
+//        Album a2 = new Album(null, "TEST BOOK TO AUTHOR MAPPING2", "J.K. Rowling", "Penguin", "Fantasy", 300,idArtist);
+//        Long albumid = albumService.create(a);
+//        Long albumid2 = albumService.create(a2);
+//
+//        // Act
+//        List<Album> booksWritten = artistService.getClass().getName();
+//        Assert.assertEquals(2, booksWritten.size());
+//        Assert.assertEquals(albumid, booksWritten.get(0).getId());
+//        Assert.assertEquals(albumid2, booksWritten.get(1).getId());
+//
+//        for (Album bk : booksWritten) {
+//            System.out.println(bk.toString());
+//        }
+//
+//        albumService.delete(albumid);
+//        albumService.delete(albumid2);
+//        artistService.delete(idArtist);
+//    }
+
+}
 
 //    @Test
 //    public void createTest() {
@@ -179,4 +207,4 @@ public class TestArtistServ {
 
 
 
-}
+
