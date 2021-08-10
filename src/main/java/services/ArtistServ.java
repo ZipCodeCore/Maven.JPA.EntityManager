@@ -1,13 +1,10 @@
 package services;
 
-import entities.Album;
 import entities.Artist;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
-import java.util.Collection;
 import java.util.List;
 
 public class ArtistServ {

@@ -58,7 +58,12 @@ public class AlbumServ {
         entityManager.getTransaction().commit();
     }
 
-
+    public void createMultiple(List<Album> list) {
+        entityManager.getTransaction().begin();
+        list.stream()
+                .forEach(artist -> entityManager.persist(artist));
+        entityManager.getTransaction().commit();
+    }
 }
 
 
