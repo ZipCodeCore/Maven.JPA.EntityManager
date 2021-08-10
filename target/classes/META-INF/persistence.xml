@@ -3,12 +3,13 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="AlbumDB">
         <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/manager"/>
+            <property name="javax.persistence.jdbc.user" value="laura"/>
+            <property name="javax.persistence.jdbc.password" value="zipcode0"/>
+            <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/?user=laura"/>
-            <property name="javax.persistence.jdbc.user" value="huff"/>
-            <property name="javax.persistence.jdbc.password" value="zipcode0"/>
         </properties>
     </persistence-unit>
 </persistence>
